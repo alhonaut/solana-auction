@@ -1,0 +1,17 @@
+[features]
+seeds = false
+skip-lint = false
+[programs.localnet]
+auction_house = "FMrPvDk4xZNykJ2aWCmyKCzQ12qhJ6SR9tS67fhLbx8x"
+auctioneer = "9sCGJFSVb7zyXfozXXiVyemaaNtbHVEiRy81HmQzGWG9"
+nft_minter = "FYUpechM9AEW579boyznhD7vq3xumeC3BstW4PB1qGEp"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/tests.ts"

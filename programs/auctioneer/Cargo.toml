@@ -1,0 +1,26 @@
+[package]
+name = "auctioneer"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "auctioneer"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { git = "https://github.com/coral-xyz/anchor" }
+anchor-spl = { git = "https://github.com/coral-xyz/anchor" }
+auction_house = { path = "../auction_house", features = ["cpi", "no-entrypoint"] }
+nft_minter = { path = "../nft_minter", features = ["no-entrypoint"] }
+
+[dev-dependencies]
+solana-program-test = "1.14"
+anchor-client = { git = "https://github.com/coral-xyz/anchor" }
